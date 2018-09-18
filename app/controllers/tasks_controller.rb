@@ -3,12 +3,12 @@
 #   { task: "Do something else"},
 #   { task: "eat dessert"}
 # ]
-
-TASKS = ["clean room", "do laundry", "make lunch", "grocery shopping"]
+#
+# TASKS = ["clean room", "do laundry", "make lunch", "grocery shopping"]
 
 class TasksController < ApplicationController
   def index
-    @tasks = TASKS
+    return @tasks = TASKS.all
   end
 
   def show
