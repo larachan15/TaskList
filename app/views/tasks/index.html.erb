@@ -3,9 +3,16 @@
 
 
 <% @tasks.each do |task| %>
-  <li>
-    <strong> <%= task %>
 
-    </strong> </li>
+
+  <li> <p>
+    Task Name:
+  <%= task.action %> </p>
+
+  <p>
+    Task Description:
+  <%= task.description %> </li> </p>
+
+
     <% end %>
   </ul>
