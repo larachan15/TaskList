@@ -21,4 +21,37 @@ class TasksController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @task = find_task
+  end
+  
+  def update
+    @task = find_task
+    if @task.update(task_params)
+      redirect_to tasks_path
+    else
+      head :not_acceptable
+    end
+  end
+
+  # def destroy
+  #   task = Task.find_by(id: params[:id])
+  #
+  #   task.destroy
+  #   redirect_to task_path
+  # end
+  #
+  # private
+  #
+  # # Strong params: only let certain attributes
+  # # through
+  # def task_params
+  #   return params.require(:task).permit(
+  #     :action,
+  #     :description,
+  #   )
+  # end
+
+
 end

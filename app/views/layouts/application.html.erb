@@ -10,6 +10,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <h1> TASKLIST </h1>
+      <%= link_to "All Tasks", tasks_path %>
+      <%= link_to "New Task", new_task_path %>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
