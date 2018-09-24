@@ -10,13 +10,27 @@
   </head>
 
   <body>
-    <nav>
-      <h1> TASKLIST </h1>
-      <%= link_to "New Task", new_task_path %>
-      <%= link_to "All Tasks", tasks_path %>
-    </nav>
+    <section class="nav-container">
+      <nav>
+        <ul>
+          <li><%= link_to "New Task", new_task_path %></li>
+          <li><%= link_to "All Tasks", tasks_path %></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="title">
+      <h1>Task List</h1>
+    </section>
+
     <main>
       <%= yield %>
     </main>
+
+    <footer>
+      <h4>
+        Made by Dionisia Montanez at Ada Developers Academy &copy; 2018
+      </h4>
+    </footer>
   </body>
 </html>

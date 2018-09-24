@@ -1,10 +1,20 @@
 <ul>
-  <% @tasks.each_with_index do |task| %>
-    <li>
-      <span>Task: <%= link_to task.action, task %>
-      </span>
-      <%= link_to "(Delete)", task_path(task.id), method: :delete, data: { confirm: "You sure?" }%>
-
+  <% @tasks.each do |task|  %>
+  <li class="list">
+    <div class="body-container">
+      <%  if task[:completion_date]  %>
+      <input type="checkbox" checked>
+      <% else %>
+      <input type="checkbox">
+      <% end %>
+        <span>
+          Task Name: <%= task[:action] %> Description: <%= task[:description] %>
+          <%= link_to "View Details", task_path(task.id) %>
+          <%= link_to "Edit Task", edit_task_path(task.id) %>
+          <%= link_to "Delete Task", task_path(task.id), method: :delete, data: { confirm: "Are you sure you want to delete the task #{task.action}?" } %>
+          <%= link_to "Complete Task", complete_task_path(task.id), method: :patch %>
+        </span>
+    </div>
     </li>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>

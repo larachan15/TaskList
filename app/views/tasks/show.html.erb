@@ -1,6 +1,9 @@
-<p>
+<h3>
+  Task name: <%= @task.action %>
+</h3>
+
+<span>
   <strong>Description:</strong>
-  <!-- <%= @task.action %> -->
   <%= @task.description %>
   <%= link_to "Edit Task", edit_task_path(@task) %>
-</p>
+</span>

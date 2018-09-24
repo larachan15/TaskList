@@ -1,3 +1,5 @@
+require 'date'
+
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
@@ -37,10 +39,18 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find_by(id: params[:id])
-    @task.destroy
-    
-    redirect_to task_path
+    task = Task.find_by(id: params[:id])
+
+    task.destroy
+    redirect_to root_path
+  end
+
+  def complete
+    task = Task.find(params[:id])
+    task.completion_date = DateTime.now
+    task.save
+
+    redirect_to root_path
   end
 
   private
