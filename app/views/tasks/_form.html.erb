@@ -1,11 +1,9 @@
-<h3>Edit Task Form</h3>
-
 <%= form_with model: @task do |f| %>
-  <%= f.label :action %>
+  <%= f.label "Action:" %>
   <%= f.text_field :action %>
 
-  <%= f.label :description %>
+  <%= f.label "Description:" %>
   <%= f.text_field :description %>
 
-  <%= f.submit "Edit Task" %>
+  <%= f.submit action_name %>
 <% end %>

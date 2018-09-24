@@ -23,15 +23,16 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = find_task
+    @task = Task.find_by(id: params[:id])
   end
-  
+
   def update
-    @task = find_task
+    @task = Task.find_by(id: params[:id])
+
     if @task.update(task_params)
-      redirect_to tasks_path
+      redirect_to task_path(@task.id)
     else
-      head :not_acceptable
+      render :update
     end
   end
 

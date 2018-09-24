@@ -1,8 +1,9 @@
 <ul>
-  <% @tasks.each do |task| %>
+  <% @tasks.each_with_index do |task| %>
     <li>
       <span>Task: <%= link_to task.action, task %>
       </span>
+
     </li>
   <% end %>
 </ul>
