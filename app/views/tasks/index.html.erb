@@ -3,6 +3,7 @@
     <li>
       <span>Task: <%= link_to task.action, task %>
       </span>
+      <%= link_to "(Delete)", task_path(task.id), method: :delete, data: { confirm: "You sure?" }%>
 
     </li>
   <% end %>

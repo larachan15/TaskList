@@ -36,23 +36,23 @@ class TasksController < ApplicationController
     end
   end
 
-  # def destroy
-  #   task = Task.find_by(id: params[:id])
-  #
-  #   task.destroy
-  #   redirect_to task_path
-  # end
-  #
-  # private
-  #
-  # # Strong params: only let certain attributes
-  # # through
-  # def task_params
-  #   return params.require(:task).permit(
-  #     :action,
-  #     :description,
-  #   )
-  # end
+  def destroy
+    @task = Task.find_by(id: params[:id])
+    @task.destroy
+    
+    redirect_to task_path
+  end
+
+  private
+
+  # Strong params: only let certain attributes
+  # through
+  def task_params
+    return params.require(:task).permit(
+      :action,
+      :description,
+    )
+  end
 
 
 end
