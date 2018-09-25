@@ -92,7 +92,7 @@ p {
 }
 
 button {
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 5px;
   background-color: #FF0F80;
   font-size: 16px;
@@ -107,11 +107,3 @@ button:hover {
 button:visited {
   text-decoration: none;
 }
-
-/* p {
-  display: inline-block;
-} */
-
-/* li {
-  list-style: square;
-} */
